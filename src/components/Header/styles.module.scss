@@ -1,0 +1,131 @@
+@import 'src/styles/utils/mixins';
+
+.navbar {
+  width: 100%;
+  height: 110px;
+  background-color: $primary-white;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 2px 2px rgb(0 0 0 / 6%), 0 0 2px rgb(0 0 0 / 7%);
+  .navbarContainer {
+    @include flex(row, space-between, center);
+    height: inherit;
+    max-width: 1660px;
+    margin: 0 auto;
+    position: relative;
+    @include tablet {
+      justify-content: flex-end;
+      padding-right: 30px;
+    }
+    .navbarBrand {
+      position: absolute;
+      left: -60px;
+      img {
+        width: 50px;
+        height: 50px;
+
+        @include tablet {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+
+    .navbarNavLeft {
+      text-transform: uppercase;
+      flex: 1;
+    }
+
+    .navbarNavRight {
+      svg {
+        height: 20px;
+        width: 20px;
+        margin-right: 10px;
+      }
+
+      li:first-child a {
+        @include flex(row, flex-start, center);
+      }
+
+      li:nth-child(2) {
+        margin: 0 5px;
+      }
+    }
+
+    .navbarNavLeft, .navbarNavRight {
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  .hamburger {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    background: none;
+    border: none;
+    z-index: 10;
+    transition: all 0.25s;
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+
+    .hamburgerTop,
+    .hamburgerMiddle,
+    .hamburgerBottom {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 24px;
+      height: 2px;
+      background: $primary-black;
+      transform: rotate(0);
+      transition: all 0.5s;
+    }
+
+    .hamburgerMiddle {
+      transform: translateY(7px);
+    }
+
+    .hamburgerBottom {
+      transform: translateY(14px);
+    }
+
+    &.open {
+      .hamburgerTop {
+        transform: rotate(45deg) translateY(6px) translateX(6px);
+      }
+
+      .hamburgerMiddle {
+        display: none;
+      }
+
+      .hamburgerBottom {
+        transform: rotate(-45deg) translateY(6px) translateX(-6px);
+      }
+    }
+  }
+
+  ul {
+    @include flex(row, flex-start, center);
+  }
+
+  li {
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+  }
+
+  a {
+    text-decoration: none;
+    &:hover {
+      color: $primary;
+      svg {
+        fill: $primary;
+      }
+    }
+  }
+}

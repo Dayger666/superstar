@@ -1,0 +1,6 @@
+@import 'src/styles/utils/mixins';
+
+.container {
+  @include flex(column);
+  min-height: 100vh;
+}

@@ -1,0 +1,22 @@
+@import './colors';
+@import './variables';
+
+@mixin flex($fd: row, $jc: initial, $ai: initial, $fw: nowrap) {
+  display: flex;
+  flex-direction: $fd;
+  justify-content: $jc;
+  align-items: $ai;
+  flex-wrap: $fw;
+}
+
+@mixin tablet {
+  @media (max-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin smallDesktop {
+  @media (max-width: $small-desktop-width) {
+    @content;
+  }
+}

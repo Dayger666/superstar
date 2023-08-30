@@ -1,5 +1,6 @@
 import React from 'react';
 import NextLink from 'next/link';
+import PropTypes from 'prop-types';
 
 import { leftNavbarItems } from '@/components/Header/utils/data';
 import Marker from '@/components/Icons/Marker';
@@ -31,5 +32,9 @@ const MobileMenu = ({ navRef }) => (
     </div>
   </div>
 )
+
+MobileMenu.propsType = {
+  navRef: PropTypes.instanceOf(Object).isRequired,
+};
 
 export default MobileMenu;

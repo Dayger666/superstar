@@ -4,7 +4,7 @@ import Layout from '@/HOC/Layout';
 
 const Home = () => (
   <Layout >
-    test
+    Content...
   </Layout>
 );
 

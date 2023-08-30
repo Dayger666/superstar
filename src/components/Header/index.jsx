@@ -38,7 +38,6 @@ const Header = () => {
               </li>
             ))}
           </ul>
-          
           <ul className={styles.navbarNavRight}>
             <li>
               <NextLink href="/">
